@@ -41,6 +41,7 @@ $(function() {
 	$("#hired").click(function() {
 		clearInterval(timerId);
 		deleteDriverLocationEntry();
+		document.getElementById("mobileno").value = "";
 		$("#hired").hide();
 		$('#forHire').removeClass('ui-disabled');
 		clicked = false;
@@ -94,7 +95,12 @@ $(function() {
 			method : "forhire",
 			format : "json"
 		};
-		$.post("http://www.ziftapp.com/api/ziftapi.php", data).done(function() {
+		$.post("http://www.ziftapp.com/api/ziftapi.php", data, function(response){
+			if(response.forHireData === "LOCATION_SAVED") {
+				alert("Please wait. We are searching Fare for you!");
+			}
+		}).done(function(response) {
+			
 			//Successful response from server goes here.
 		}).fail(function() {
 			//When we do not receive a 200 OK from the server.
@@ -107,7 +113,7 @@ $(function() {
 			method : "hired",
 			format : "json"
 		};
-		$.post("http://www.ziftapp.com//api/ziftapi.php", data).done(function() {
+		$.post("http://www.ziftapp.com/api/ziftapi.php", data).done(function() {
 			//Successful response from server goes here.
 		}).fail(function() {
 			//When we do not receive a 200 OK from the server.
