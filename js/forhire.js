@@ -18,10 +18,9 @@ $(function() {
 				required : "Please enter a Mobile No.",
 			}
 		},
-        submitHandler: function (form) { // for demo
-            alert('valid form');
-            return false;
-        }
+        errorPlacement: function( error, element ) {
+			error.insertAfter( element.parent() );
+		}
     });
 	
 	$("#hired").hide();

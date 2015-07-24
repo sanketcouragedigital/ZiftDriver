@@ -8,7 +8,7 @@
   	<script src="js/jquery-1.11.2.min.js"></script>
   	<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-	<script src="js/forhire.js"></script>
+	<script src="js/register.js"></script>
 	<script src="js/jquery-validation-1.13.1/lib/jquery.js"></script>
 	<script src="js/jquery-validation-1.13.1/dist/jquery.validate.js"></script>
 	<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" />
@@ -28,13 +28,17 @@
 
 	<div data-role="content" style="padding-top:20px; padding-right:20px; padding-bottom:20px; padding-left:20px;">
 		<form id="registerForm">
-			<input type="text" name="name" id="name" data-corners="false" placeholder = "Enter your Name">
+			<input type="text" name="name" id="name" data-corners="false" placeholder = "Name">
 			
-			<input type="text" name="mobileno" id="mobileno" data-corners="false" placeholder = "Enter your Mobile No.">
+			<input type="tel" name="mobileno" id="mobileno" data-corners="false" placeholder = "Mobile No.">
 			
-			<input type="text" name="taxino" id="taxino" data-corners="false" placeholder = "Enter your Taxi No.">
+			<input type="text" name="taxino" id="taxino" data-corners="false" placeholder = "Taxi No.">
+			
+			<input type="password" name="password" id="password" data-corners="false" placeholder = "Password">
+			
+			<input type="password" name="confirmPassword" id="confirmPassword" data-corners="false" placeholder = "Confirm Password">
 	
-			<a id="submit" data-role="button" data-corners="false">Submit</a>
+			<a id="register" data-role="button" data-corners="false">Register</a>
 		</form>
 	</div>
 
