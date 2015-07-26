@@ -1,0 +1,37 @@
+@font-face
+{
+font-family: "DVOT Saraswati";
+src: url('fonts/DVOT-Saraswati_N_Ship.ttf');
+font-style: normal;
+font-weight: normal;
+}
+
+@font-face
+{
+font-family: "DVOT Saraswati";
+src: url('fonts/DVOT-Saraswati_B_Ship.ttf');
+font-style: normal;
+font-weight: bold;
+}
+
+@font-face
+{
+font-family: "DVOT Saraswati";
+src: url('fonts/DVOT-Saraswati_I_Ship.ttf');
+font-style: italic;
+font-weight: normal;
+}
+
+@font-face
+{
+font-family: "DVOT Saraswati";
+src: url('fonts/DVOT-Saraswati_BI_Ship.ttf');
+font-style: italic;
+font-weight: bold;
+}
+
+#registerForm input, #loginForm input
+{
+font-family: "DVOT Saraswati";
+font-size: 12pt;
+}

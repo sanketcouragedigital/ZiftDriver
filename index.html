@@ -28,12 +28,27 @@
 
 	<div data-role="content" style="padding-top:20px; padding-right:20px; padding-bottom:20px; padding-left:20px;">
 		<form id="forHireForm">
-			<input type="tel" name="mobileno" id="mobileno" data-corners="false" placeholder = "Enter Mobile No.">
-
+			<input type="tel" name="mobileno" id="mobileno" data-corners="false" placeholder = "Enter Mobile No." >
 			<a id="forHire" data-role="button" data-theme="d" data-corners="false">For Hire</a>
 	
 			<a id="hired" data-role="button" data-theme="g" data-corners="false">Hired</a>
 		</form>
+
+		<div data-role="popup" id="dlg-save-error" data-dismissible="false" style="max-width:400px;">
+        	<div role="main" class="ui-content">
+          	<h3>Error</h3>
+          	<p>Oops, something seems to have gone wrong when trying to save your comment. Please try again after some time. May be our system is down temporarily.</p>
+          	<div class="mc-text-center"><a href="home.html" data-ajax="false" class="ui-btn ui-corner-all ui-shadow ui-btn-b">OK</a></div>
+          	</div>
+    	</div>
+
+    	<div data-role="popup" id="dlg-save-success" data-dismissible="false" style="max-width:400px;">
+        	<div role="main" class="ui-content">
+          	<h3>Message</h3>
+          	<p>Please wait. We are searching Fare for you!</p>
+          	<div class="mc-text-center"><a rel="close" data-ajax="false" class="ui-btn ui-corner-all ui-shadow ui-btn-b">OK</a></div>
+          	</div>
+    	</div>
 	</div>
 
 	<div data-role="footer" data-position="fixed"  data-theme="f">
