@@ -31,10 +31,10 @@ $(function() {
 				format : "json"
 			};
 			$.post("http://localhost/ZiftAPI/api/ziftDriverLoginRegisterAPI.php", data).done(function(response) {
-				if(response.driverRegister === "LOGGED_IN") {
+				if(response.driverLogin === "LOGGED_IN") {
 					window.location.href="forhire.html";
 				} else {
-					alert("There is error while login! Please check your Credentials");
+					alert("There is error while login! Please check your Credentials.");
 				}
 			}).fail(function() {
 				//When we do not receive a 200 OK from the server.

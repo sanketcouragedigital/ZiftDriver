@@ -53,6 +53,12 @@ $(function() {
 				var latitude = position.coords.latitude;
 				var longitude = position.coords.longitude;
 				findAreaofLocation(latitude, longitude);
+			},
+			function() {
+				$("#hired").hide();
+				$('#forHire').removeClass('ui-disabled');
+				clicked = false;
+				alert("Your location is disabled on your phone. Please enable it first...!");
 			});
 		} else {
 			alert("Location not found");
@@ -96,13 +102,49 @@ $(function() {
 		};
 		$.post("http://localhost/ZiftAPI/api/ziftapi.php", data, function(response){
 			if(response.forHireData === "LOCATION_SAVED") {
-                //$("#dlg-save-success").popup("open");
-                alert("Please wait. We are searching Fare for you!");
+                $("#dlg-save-success").dialog({
+      				modal: true,
+     				buttons: {
+        				Ok: function() {
+          					$( this ).dialog( "close" );
+        				}
+      				}
+    			});
+                $("element.style").css("background","white");
+                //alert("Please wait. We are searching Fare for you!");
+			}
+			else if(response.forHireData === "ERROR") {
+                document.getElementById("mobileno").value = "";
+                $("#hired").hide();
+                $('#forHire').removeClass('ui-disabled');
+				clicked = false;
+                $("#dlg-save-error").dialog({
+      				modal: true,
+     				buttons: {
+        				Ok: function() {
+          					$( this ).dialog( "close" );
+        				}
+      				}
+    			});
+    			$("element.style").css("background","white");
 			}
 		}).done(function(response) {
 			
 			//Successful response from server goes here.
 		}).fail(function() {
+			document.getElementById("mobileno").value = "";
+            $("#hired").hide();
+            $('#forHire').removeClass('ui-disabled');
+			clicked = false;
+            $("#dlg-save-error").dialog({
+      			modal: true,
+     			buttons: {
+        			Ok: function() {
+          				$( this ).dialog( "close" );
+        			}
+      			}
+    		});
+    		$("element.style").css("background","white");
 			//When we do not receive a 200 OK from the server.
 		});
 	}
@@ -113,7 +155,10 @@ $(function() {
 			method : "hired",
 			format : "json"
 		};
-		$.post("http://localhost/ZiftAPI/api/ziftapi.php", data).done(function() {
+		$.post("http://localhost/ZiftAPI/api/ziftapi.php", data, function(){
+			
+		})
+		.done(function() {
 			//Successful response from server goes here.
 		}).fail(function() {
 			//When we do not receive a 200 OK from the server.

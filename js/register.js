@@ -71,8 +71,14 @@ $(function() {
 			$.post("http://localhost/ZiftAPI/api/ziftDriverLoginRegisterAPI.php", data).done(function(response) {
 				if(response.driverRegister === "DRIVER_DETAILS_SAVED") {
 					alert("Thank you for registration!");
+					window.location.href="login.html";
 				} else {
 					alert("Mobile No. already registered!");
+					document.getElementById("name").value = "";
+					document.getElementById("mobileno").value = "";
+					document.getElementById("taxino").value = "";
+					document.getElementById("password").value = "";
+					document.getElementById("confirmPassword").value = "";
 				}
 			}).fail(function() {
 				//When we do not receive a 200 OK from the server.

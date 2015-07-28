@@ -1,3 +1,6 @@
-#forHireForm a, #registerForm a, #loginForm a {
+#forHireForm a, #registerForm a, #loginForm a, #indexButton a{
 	line-height:40px;
+}
+#indexButton{
+	padding-top : 40%;
 }
