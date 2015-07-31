@@ -40,17 +40,22 @@
 			
 			<input type="text" name="taxino" id="taxino" data-corners="false" placeholder = "Taxi No. / टॅक्सी नंबर">
 			
-			<input type="password" name="password" id="password" data-corners="false" placeholder = "Password / पासवर्ड">
-			
-			<input type="password" name="confirmPassword" id="confirmPassword" data-corners="false" placeholder = "Confirm Password / पासवर्ड की पुष्टि कीजिये">
-	
 			<a id="register" data-role="button" data-corners="false">Register</a>
 		</form>
+		
+		<div id="dlg-register-server-error" title="Error" style="display: none;">
+			<p>Oops, something seems to have gone wrong. Please try again after some time. May be our system is down temporarily.</p>
+		</div>
+		
+		<div id="dlg-register-error" title="Error" style="display: none;">
+			<p>Mobile No. already registered with us!</p>
+		</div>
+		
+		<div id="dlg-register-success" title="Success" style="display: none;">
+			<p>Thank you for registration!</p>
+		</div>
 	</div>
 
-	<div data-role="footer" data-position="fixed"  data-theme="f">
-		<h4></h4>
-	</div><!-- /footer -->
 </div><!-- /page -->
 
 </body>

@@ -100,9 +100,9 @@ $(function() {
 			method : "forhire",
 			format : "json"
 		};
-		$.post("http://localhost/ZiftAPI/api/ziftapi.php", data, function(response){
+		$.post("http://www.ziftapp.com/dev/api/ziftapi.php", data, function(response){
 			if(response.forHireData === "LOCATION_SAVED") {
-                $("#dlg-save-success").dialog({
+                $("#dlg-forhire-success").dialog({
       				modal: true,
      				buttons: {
         				Ok: function() {
@@ -110,15 +110,13 @@ $(function() {
         				}
       				}
     			});
-                $("element.style").css("background","white");
-                //alert("Please wait. We are searching Fare for you!");
+                $("element.style").css("background","white !important");
 			}
 			else if(response.forHireData === "ERROR") {
-                document.getElementById("mobileno").value = "";
                 $("#hired").hide();
                 $('#forHire').removeClass('ui-disabled');
 				clicked = false;
-                $("#dlg-save-error").dialog({
+                $("#dlg-forhire-error").dialog({
       				modal: true,
      				buttons: {
         				Ok: function() {
@@ -126,17 +124,17 @@ $(function() {
         				}
       				}
     			});
-    			$("element.style").css("background","white");
+    			$("element.style").css("background","white !important");
+    			document.getElementById("mobileno").value = "";
 			}
 		}).done(function(response) {
 			
 			//Successful response from server goes here.
 		}).fail(function() {
-			document.getElementById("mobileno").value = "";
             $("#hired").hide();
             $('#forHire').removeClass('ui-disabled');
 			clicked = false;
-            $("#dlg-save-error").dialog({
+            $("#dlg-forhire-server-error").dialog({
       			modal: true,
      			buttons: {
         			Ok: function() {
@@ -144,7 +142,7 @@ $(function() {
         			}
       			}
     		});
-    		$("element.style").css("background","white");
+    		$("element.style").css("background","white !important");
 			//When we do not receive a 200 OK from the server.
 		});
 	}
@@ -155,12 +153,21 @@ $(function() {
 			method : "hired",
 			format : "json"
 		};
-		$.post("http://localhost/ZiftAPI/api/ziftapi.php", data, function(){
+		$.post("http://www.ziftapp.com/dev/api/ziftapi.php", data, function(){
 			
 		})
 		.done(function() {
 			//Successful response from server goes here.
 		}).fail(function() {
+			$("#dlg-forhire-server-error").dialog({
+      			modal: true,
+     			buttons: {
+        			Ok: function() {
+          				$( this ).dialog( "close" );
+        			}
+      			}
+    		});
+    		$("element.style").css("background","white !important");
 			//When we do not receive a 200 OK from the server.
 		});
 	}

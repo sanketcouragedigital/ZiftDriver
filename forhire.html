@@ -31,39 +31,25 @@
 	<div data-role="content" style="padding-top:20px; padding-right:20px; padding-bottom:20px; padding-left:20px;">
 		<form id="forHireForm">
 			<input type="tel" name="mobileno" id="mobileno" data-corners="false" placeholder = "Enter Mobile No." >
+			
 			<a id="forHire" data-role="button" data-theme="d" data-corners="false">For Hire</a>
 	
 			<a id="hired" data-role="button" data-theme="g" data-corners="false">Hired</a>
 		</form>
-
-		<!--<div data-role="popup" id="dlg-save-error" data-dismissible="false" data-theme="b" style="max-width:400px;">
-        	<div role="main" class="ui-content">
-          	<h3>Error</h3>
-          	<p>Oops, something seems to have gone wrong. Please try again after some time. May be our system is down temporarily.</p>
-          	<div class="mc-text-center"><a data-rel="close" data-ajax="false" class="ui-btn ui-corner-all ui-shadow ui-btn-b">OK</a></div>
-          	</div>
-  		</div>-->
     	
-		<div id="dlg-save-error" title="Error" style="display: none;">
+    	<div id="dlg-forhire-server-error" title="Error" style="display: none;">
 			<p>Oops, something seems to have gone wrong. Please try again after some time. May be our system is down temporarily.</p>
 		</div>
-		
-		<div id="dlg-save-success" title="Success" style="display: none;">
-			<p>
-				Please wait. We are searching Fare for you!
-			</p>
+    	
+		<div id="dlg-forhire-error" title="Error" style="display: none;">
+			<p>This Mobile No. is not registerd with us.</p>
 		</div>
-    	<!--<div data-role="popup" id="dlg-save-success" data-dismissible="false" data-theme="b" style="max-width:400px;">
-        	<div role="main" class="ui-content">
-          	<h3>Success</h3>
-          	<p>Please wait. We are searching Fare for you!</p>
-          	<div class="mc-text-center"><a data-rel="close" data-ajax="false" class="ui-btn ui-corner-all ui-shadow ui-btn-b">OK</a></div>
-          	</div>
-    	</div>-->
+		
+		<div id="dlg-forhire-success" title="Success" style="display: none;">
+			<p>Please wait. We are searching Fare for you!</p>
+		</div>
 	</div>
-
-	<div data-role="footer" data-position="fixed"  data-theme="f">
-	</div><!-- /footer -->
+	
 </div><!-- /page -->
 
 </body>

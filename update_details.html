@@ -9,7 +9,7 @@
   	<script src="js/jquery-1.11.2.min.js"></script>
   	<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-	<script src="js/login.js"></script>
+	<script src="js/update_details.js"></script>
 	<script src="js/jquery-validation-1.13.1/lib/jquery.js"></script>
 	<script src="js/jquery-validation-1.13.1/dist/jquery.validate.js"></script>
 	<script src="js/jquery-ui/jquery-ui.min.js"></script>
@@ -27,24 +27,39 @@
 <div data-role="page">
 
 	<div data-role="header"  data-theme="f">
-		<h1>Login</h1>
+		<h1>Update Details</h1>
 		<a data-icon="back" data-iconpos="notext" data-rel="back" title="Go back">Back</a>
 		<a href="index.html" class="ui-btn-right" data-icon="home"  data-ajax="false" data-iconpos="notext" data-direction="reverse">Home</a> 
 	</div><!-- /header -->
 
 	<div data-role="content" style="padding-top:20px; padding-right:20px; padding-bottom:20px; padding-left:20px;">
-		<form id="loginForm">			
-			<input type="tel" name="mobileno" id="mobileno" data-corners="false" placeholder = "Mobile No. / मोबाइल नंबर">
+		<form id="updateForm">
+			<input type="tel" name="oldmobileno" id="oldmobileno" data-corners="false" placeholder = "Old Mobile No. / पुराना मोबाइल नंबर">
+				
+			<input type="tel" name="newmobileno" id="newmobileno" data-corners="false" placeholder = "New Mobile No. / नया मोबाइल नंबर">
 			
-			<input type="password" name="password" id="password" data-corners="false" placeholder = "Password / पासवर्ड">
+			<input type="text" name="newtaxino" id="newtaxino" data-corners="false" placeholder = "New Taxi No. / नया टॅक्सी नंबर">
 	
-			<a id="register" data-role="button" data-corners="false">Login</a>
+			<a id="update" data-role="button" data-corners="false">Update</a>
 		</form>
+		
+		<div id="dlg-update-server-error" title="Error" style="display: none;">
+			<p>Oops, something seems to have gone wrong. Please try again after some time. May be our system is down temporarily.</p>
+		</div>
+		
+		<div id="dlg-update-error" title="Error" style="display: none;">
+			<p>Please enter a Mobile No or Taxi No for update.</p>
+		</div>
+		
+		<div id="dlg-update-mobileno-error" title="Error" style="display: none;">
+			<p>Please enter your registered Mobile No.</p>
+		</div>
+		
+		<div id="dlg-update-success" title="Success" style="display: none;">
+			<p>Your details has been updated successfully</p>
+		</div>
 	</div>
-
-	<div data-role="footer" data-position="fixed"  data-theme="f">
-		<h4></h4>
-	</div><!-- /footer -->
+	
 </div><!-- /page -->
 
 </body>
